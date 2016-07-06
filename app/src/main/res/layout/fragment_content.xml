@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.l000phone.mygifttalk.view.NoScrollViewPager
+        android:id="@+id/vp_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#55000000" />
+
+    <RadioGroup
+        android:id="@+id/rg_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="3dp"
+        android:background="#ffffff"
+        android:orientation="horizontal">
+
+
+        <RadioButton
+            android:id="@+id/rb_home"
+            style="@style/TabStyle"
+            android:drawableTop="@drawable/gift_home_pic_selector"
+            android:text="首页" />
+
+        <RadioButton
+            android:id="@+id/rb_single"
+            style="@style/TabStyle"
+            android:drawableTop="@drawable/gift_select_pic_selector"
+            android:text="单品" />
+
+        <RadioButton
+            android:id="@+id/rb_category"
+            style="@style/TabStyle"
+            android:drawableTop="@drawable/gift_category_pic_selector"
+            android:text="分类" />
+
+        <RadioButton
+            android:id="@+id/rb_me"
+            style="@style/TabStyle"
+            android:drawableTop="@drawable/gift_me_pic_selector"
+            android:text="我" />
+    </RadioGroup>
+
+</LinearLayout>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#ddff0000">
+
+        <ImageButton
+            android:id="@+id/btn_scanner"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_margin="15dp"
+            android:background="@mipmap/ic_toolkit_zebra_scanner"
+            android:padding="15dp" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true">
+
+            <TextView
+                android:id="@+id/tv_title"
+                style="@style/TitleStyle"
+                android:text="礼物说" />
+
+            <RadioGroup
+                android:id="@+id/category_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/category_tab_bg"
+                android:gravity="center"
+                android:visibility="gone"
+                android:orientation="horizontal">
+
+
+                <RadioButton
+                    android:id="@+id/rb_strategy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:background="@drawable/tab_left_button_selector"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="攻略"
+                    android:textColor="@drawable/title_text_selector"
+                    android:textSize="15sp" />
+
+                <RadioButton
+                    android:id="@+id/rb_gift"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="2dp"
+                    android:background="@drawable/tab_rigth_button_selector"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="礼物"
+                    android:textColor="@drawable/title_text_selector"
+                    android:textSize="15sp" />
+
+            </RadioGroup>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true">
+
+            <ImageButton
+                android:id="@+id/btn_search"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_margin="10dp"
+                android:background="@mipmap/ic_menu_search" />
+
+            <ImageButton
+                android:id="@+id/btn_more"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_margin="10dp"
+                android:background="@mipmap/icon_train_big_more"
+                android:visibility="gone" />
+        </FrameLayout>
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/ct_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:dividerHeight="5dp">
+
+        </android.support.v4.view.ViewPager>
+
+    </FrameLayout>
+
+</LinearLayout>
