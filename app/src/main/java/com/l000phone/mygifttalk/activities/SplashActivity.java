@@ -36,7 +36,6 @@ public class SplashActivity extends Activity {
         AlphaAnimation alphaAnimation = new AlphaAnimation(0, 1);
         alphaAnimation.setDuration(1000);
         alphaAnimation.setFillAfter(true);
-
         set.addAnimation(scale);
         set.addAnimation(alphaAnimation);
 

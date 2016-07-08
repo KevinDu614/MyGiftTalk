@@ -36,8 +36,8 @@
                 android:layout_centerInParent="true"
                 android:background="@drawable/category_tab_bg"
                 android:gravity="center"
-                android:visibility="gone"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:visibility="gone">
 
 
                 <RadioButton
@@ -60,7 +60,7 @@
                     android:background="@drawable/tab_rigth_button_selector"
                     android:button="@null"
                     android:gravity="center"
-                    android:text="礼物"
+                    android:text="单品"
                     android:textColor="@drawable/title_text_selector"
                     android:textSize="15sp" />
 
@@ -102,8 +102,8 @@
             android:id="@+id/ct_view_pager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone"
-            android:dividerHeight="5dp">
+            android:dividerHeight="5dp"
+            android:visibility="gone">
 
         </android.support.v4.view.ViewPager>
 

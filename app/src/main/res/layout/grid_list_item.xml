@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="4dp"
+        android:paddingTop="4dp">
+
+        <TextView
+            android:id="@+id/iv_list_item_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:background="#30ff4081"
+            android:text="礼物" />
+
+        <TextView
+            android:id="@+id/tv_list_item_short_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="5dp"
+            android:layout_toEndOf="@+id/iv_list_item_type"
+            android:layout_toRightOf="@+id/iv_list_item_type"
+            android:layout_weight="1"
+            android:text="不打烊的礼物店" />
+
+        <ImageView
+            android:id="@+id/iv_list_item_nickpic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:src="@mipmap/btn_check_selected" />
+
+        <TextView
+            android:id="@+id/iv_list_item_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:text="小C" />
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_list_item_img"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:scaleType="fitXY" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="4dp"
+        android:paddingTop="4dp">
+
+        <TextView
+            android:id="@+id/tv_list_item_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="第83期 | 古风墨色，许你一场最美的意外"
+            android:textSize="16dp" />
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="5dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_feed_favourite_normal" />
+
+        <TextView
+            android:id="@+id/tv_favourite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="5dp"
+            android:text="1000"
+            android:textColor="#000000"
+            android:textSize="10dp" />
+    </LinearLayout>
+
+</LinearLayout>

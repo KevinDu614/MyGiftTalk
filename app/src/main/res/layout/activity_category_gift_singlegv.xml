@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FF0000"
+        android:padding="15dp"
+        >
+
+        <ImageView
+            android:id="@+id/ic_action_back"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/ic_action_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/ic_action_back"
+            android:text="分类"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_singleCategoryName"
+            style="@style/TitleStyle"
+            android:text="挑选礼物"
+             />
+
+        <ImageView
+            android:id="@+id/order_hot_and_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@mipmap/ic_menu_sort" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_selections"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:paddingTop="8dp">
+
+        <TextView
+            style="@style/mericalgiftchooseitem"
+            android:text="对象"
+             />
+
+        <TextView
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#44000000" />
+
+        <TextView
+            style="@style/mericalgiftchooseitem"
+            android:text="场合" />
+
+        <TextView
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#44000000" />
+
+        <TextView
+            style="@style/mericalgiftchooseitem"
+            android:text="个性" />
+
+        <TextView
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#44000000" />
+
+        <TextView
+            style="@style/mericalgiftchooseitem"
+            android:text="价格" />
+
+
+    </LinearLayout>
+
+    <GridView
+        android:id="@+id/gv_singlecategory_products"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:numColumns="2"
+        android:padding="5dp"
+        android:verticalSpacing="8dp"
+        android:horizontalSpacing="10dp"
+        />
+</LinearLayout>
