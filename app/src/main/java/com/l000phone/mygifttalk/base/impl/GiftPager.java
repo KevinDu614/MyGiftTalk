@@ -3,8 +3,6 @@ package com.l000phone.mygifttalk.base.impl;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.util.Log;
 import android.view.View;
@@ -64,7 +62,7 @@ public class GiftPager extends BaseContentPager {
         rlChoice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("====", "选礼神器被点击了");
+                Log.i("TAG", "选礼神器被点击了");
                 Intent intent = new Intent(mActivity, ChooseGiftToolAct.class);
                 intent.putExtra("TitleName", "选礼神器");
                 mActivity.startActivity(intent);
@@ -82,6 +80,7 @@ public class GiftPager extends BaseContentPager {
     //从服务器获取数据(单品界面数据获取)
     private void initDataFromServer() {
         HttpUtils utils = new HttpUtils();
+        //单品:GIFT_CATEGORY_URL = "http://api.liwushuo.com/v2/item_categories/tree";
         utils.send(HttpRequest.HttpMethod.GET, mUrl, new RequestCallBack<String>() {
 
             private MenuAdapter mMenuAdapter;
@@ -92,6 +91,7 @@ public class GiftPager extends BaseContentPager {
                 String result = responseInfo.result;
                 //解析数据(单品界面2个ListView数据)
                 Gson gson = new Gson();
+
                 SingleCategoriesData categoryData = gson.fromJson(result, SingleCategoriesData.class);
                 final List<SingleCategoriesData.DataBean.CategoriesBean> categories = categoryData.getData().getCategories();
 
@@ -121,6 +121,7 @@ public class GiftPager extends BaseContentPager {
                     @Override
                     public void onScrollStateChanged(AbsListView view, int scrollState) {
                         //lvProduct.setOnTouchListener();
+
                         int firstItem = view.getFirstVisiblePosition();
                         if (view.getLastVisiblePosition() != categories.size() - 1) {
                             lvMenu.setSelection(firstItem);

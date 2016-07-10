@@ -28,14 +28,14 @@ public class CategoryPager extends BasePager {
         rgGroup.setVisibility(View.VISIBLE);
         btnScanner.setVisibility(View.GONE);
         rgGroup.check(R.id.rb_strategy);//设置攻略为默认选中项
-
+        //添加攻略和单品页面
         mPagerList = new ArrayList<>();
         mPagerList.add(new StrategyPager(mActivity));
         mPagerList.add(new GiftPager(mActivity));
         categoryViewPager.setAdapter(new CategoryContentPagerAdapter());
 
     }
-
+    //分类界面的适配器
     private class CategoryContentPagerAdapter extends PagerAdapter {
         @Override
         public int getCount() {
