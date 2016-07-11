@@ -2,11 +2,9 @@ package com.l000phone.mygifttalk.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.view.View;
 import android.widget.GridView;
-
 /**
- * Created by Administrator on 2015/8/10.
+ * 自定义ScrollView
  */
 public class NoScrollGridView extends GridView {
     public NoScrollGridView(Context context) {

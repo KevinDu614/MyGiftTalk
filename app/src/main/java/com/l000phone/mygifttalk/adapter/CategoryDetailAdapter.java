@@ -10,7 +10,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.l000phone.mygifttalk.CategoryEntity.ChannelsItem;
+import com.l000phone.mygifttalk.categoryentity.ChannelsItem;
 import com.l000phone.mygifttalk.R;
 import com.l000phone.mygifttalk.utils.BitmapHelper;
 import com.lidroid.xutils.BitmapUtils;
@@ -55,36 +55,36 @@ public class CategoryDetailAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ViewHolder holder;
-        Log.d("TAG", "=====================================================");
+        ViewHolder vh;
+        Log.i("TAG", "=====================================================");
         if (convertView == null) {
-            holder = new ViewHolder();
+            vh = new ViewHolder();
             convertView = View.inflate(mActivity, R.layout.grid_list_item, null);
 
-            holder.type = (TextView) convertView.findViewById(R.id.iv_list_item_type);
-            holder.shortTitle = (TextView) convertView.findViewById(R.id.tv_list_item_short_title);
-            holder.nickPic = (ImageView) convertView.findViewById(R.id.iv_list_item_nickpic);
-            holder.nickName = (TextView) convertView.findViewById(R.id.iv_list_item_nickname);
-            holder.imageView = (ImageView) convertView.findViewById(R.id.iv_list_item_img);
-            holder.title = (TextView) convertView.findViewById(R.id.tv_title);
-            holder.tvLikes = (TextView) convertView.findViewById(R.id.tv_favourite);
-            convertView.setTag(holder);
+            vh.type = (TextView) convertView.findViewById(R.id.iv_list_item_type);
+            vh.shortTitle = (TextView) convertView.findViewById(R.id.tv_list_item_short_title);
+            vh.nickPic = (ImageView) convertView.findViewById(R.id.iv_list_item_nickpic);
+            vh.nickName = (TextView) convertView.findViewById(R.id.iv_list_item_nickname);
+            vh.imageView = (ImageView) convertView.findViewById(R.id.iv_list_item_img);
+            vh.title = (TextView) convertView.findViewById(R.id.tv_title);
+            vh.tvLikes = (TextView) convertView.findViewById(R.id.tv_favourite);
+            convertView.setTag(vh);
         } else
-            holder = (ViewHolder) convertView.getTag();
+            vh = (ViewHolder) convertView.getTag();
 
         ChannelsItem.DataBean.ItemsBean itemsBean = mItemsEntityList.get(position);
 
-        Log.d("======", itemsBean.toString());
+        Log.i("TAG", itemsBean.toString());
         String coverImageUrl = itemsBean.getCover_image_url();
         String nickPicUrl = itemsBean.getAuthor().getAvatar_url();
 
-        holder.type.setText(itemsBean.getColumn().getCategory());
-        holder.shortTitle.setText(itemsBean.getColumn().getTitle());
-        holder.nickName.setText(itemsBean.getAuthor().getNickname());
-        holder.title.setText(itemsBean.getTitle());
-        holder.tvLikes.setText(itemsBean.getLikes_count());
-        loadImage(holder.imageView, coverImageUrl);
-        loadImage(holder.nickPic, nickPicUrl);
+        vh.type.setText(itemsBean.getColumn().getCategory());
+        vh.shortTitle.setText(itemsBean.getColumn().getTitle());
+        vh.nickName.setText(itemsBean.getAuthor().getNickname());
+        vh.title.setText(itemsBean.getTitle());
+        vh.tvLikes.setText(itemsBean.getLikes_count());
+        loadImage(vh.imageView, coverImageUrl);
+        loadImage(vh.nickPic, nickPicUrl);
 
         return convertView;
     }

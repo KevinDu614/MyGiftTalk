@@ -2,24 +2,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#FFFFFF"
-    >
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:layout_marginTop="30dp"
-        android:background="#FFFFFF"/>
+        android:background="#FFFFFF" />
 
     <LinearLayout
         android:id="@+id/ll_singleMenuName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
         android:background="@android:color/transparent"
+        android:gravity="center_vertical"
         android:orientation="horizontal">
-  <TextView
+
+        <TextView
             android:layout_width="0dp"
             android:layout_height="1dp"
             android:layout_weight="1"
@@ -40,13 +40,13 @@
             android:background="#33000000" />
     </LinearLayout>
 
-    <com.l000phone.gifttalk.view.NoScrollGridView
+    <com.l000phone.mygifttalk.view.NoScrollGridView
         android:id="@+id/gv_category_singleMenuProduct"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:verticalSpacing="15dp"
         android:background="@android:color/transparent"
-        android:numColumns="3"/>
+        android:numColumns="3"
+        android:verticalSpacing="15dp" />
 
 
 </LinearLayout>

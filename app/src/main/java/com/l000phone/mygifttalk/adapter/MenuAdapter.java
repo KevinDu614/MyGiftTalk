@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.l000phone.mygifttalk.CategoryEntity.SingleCategoriesData;
+import com.l000phone.mygifttalk.categoryentity.SingleCategoriesData;
 import com.l000phone.mygifttalk.R;
 
 import java.util.ArrayList;
@@ -44,17 +44,17 @@ public class MenuAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ViewHolder holder;
+        ViewHolder vh;
         if (convertView == null) {
-            holder = new ViewHolder();
+            vh = new ViewHolder();
             convertView = View.inflate(mActivity, R.layout.list_category_menu, null);
-            holder.tvMenuName = (TextView) convertView.findViewById(R.id.tv_menuName);
-            convertView.setTag(holder);
+            vh.tvMenuName = (TextView) convertView.findViewById(R.id.tv_menuName);
+            convertView.setTag(vh);
         } else {
-            holder = (ViewHolder) convertView.getTag();
+            vh = (ViewHolder) convertView.getTag();
         }
         //单品菜单项(热门分类... ...)
-        holder.tvMenuName.setText(categories.get(position).getName());
+        vh.tvMenuName.setText(categories.get(position).getName());
         return convertView;
     }
 

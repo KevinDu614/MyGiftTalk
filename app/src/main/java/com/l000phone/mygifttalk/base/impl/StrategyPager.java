@@ -1,15 +1,14 @@
 package com.l000phone.mygifttalk.base.impl;
 
 import com.google.gson.Gson;
-import com.l000phone.mygifttalk.CategoryEntity.ChannelGroupsData;
-import com.l000phone.mygifttalk.CategoryEntity.ColumnsDate;
-import com.l000phone.mygifttalk.Constants.Constants;
+import com.l000phone.mygifttalk.categoryentity.ChannelGroupsData;
+import com.l000phone.mygifttalk.categoryentity.ColumnsDate;
+import com.l000phone.mygifttalk.constants.Constants;
 import com.l000phone.mygifttalk.R;
 import com.l000phone.mygifttalk.activities.ItemDetailActivity;
 import com.l000phone.mygifttalk.activities.StrategyDetail;
 import com.l000phone.mygifttalk.adapter.CategoryGridAdapter;
 import com.l000phone.mygifttalk.base.BaseContentPager;
-import com.l000phone.mygifttalk.utils.BitmapHelper;
 import com.l000phone.mygifttalk.view.CustomGridView;
 import com.lidroid.xutils.BitmapUtils;
 import com.lidroid.xutils.HttpUtils;
@@ -49,9 +48,12 @@ public class StrategyPager extends BaseContentPager implements View.OnClickListe
         super(activity);
     }
 
-    ListView strategyList;
-    List<ChannelGroupsData.DataBean.ChannelGroupsBean> channel_groups;
-    LinearLayout id_gallery;
+    private ListView strategyList;
+    private List<ChannelGroupsData.DataBean.ChannelGroupsBean> channel_groups;
+    private LinearLayout id_gallery;
+    private TextView see_more_subject;
+
+    private List<ColumnsDate.DataBean.ColumnsBean> columns;
 
     @Override
     public View initViews() {
@@ -59,16 +61,17 @@ public class StrategyPager extends BaseContentPager implements View.OnClickListe
         View view = View.inflate(mActivity, R.layout.strategy_list, null);
         strategyList = (ListView) view.findViewById(R.id.lv_strategy);
 
-        //给ListView添加栏目布局
+        //给ListView填充栏目布局
         View SubjectView = View.inflate(mActivity, R.layout.subject_layout, null);
 
         id_gallery = (LinearLayout) SubjectView.findViewById(R.id.id_gallery);
-        TextView see_more_subject = (TextView) SubjectView.findViewById(R.id.see_more_subject);
+
+        see_more_subject = (TextView) SubjectView.findViewById(R.id.see_more_subject);
         see_more_subject.setOnClickListener(this);
         //给栏目加载数据
         String subjectUrl = Constants.SUBJECT_URL;
         //SUBJECT_URL = "http://api.liwushuo.com/v2/columns"
-        //NotFound,将Json数据放置本地服务器
+        //404报错NotFound,将Json数据放置本地服务器
         initSubjectData(subjectUrl);
         //给品类,风格,对象的GridView添加数据
         String cateUrl = Constants.CATEGORY_URL;
@@ -114,6 +117,7 @@ public class StrategyPager extends BaseContentPager implements View.OnClickListe
 
             @Override
             public void onFailure(HttpException e, String s) {
+                Toast.makeText(mActivity, "栏目数据下载失败", Toast.LENGTH_SHORT).show();
                 Log.i("TAG", "----->栏目数据加载失败");
             }
         });
@@ -124,7 +128,8 @@ public class StrategyPager extends BaseContentPager implements View.OnClickListe
         if (isHeaderView) {
             //解析栏目数据
             ColumnsDate columnsDate = gson.fromJson(result, ColumnsDate.class);
-            List<ColumnsDate.DataBean.ColumnsBean> columns = columnsDate.getData().getColumns();
+
+            columns = columnsDate.getData().getColumns();
             Log.i("TAG", "----->准备给栏目项部署数据");
             if (columnsDate != null) {
                 for (int i = 0; i < columns.size(); i++) {
@@ -146,8 +151,9 @@ public class StrategyPager extends BaseContentPager implements View.OnClickListe
                         @Override
                         public void onLoadCompleted(ImageView imageView, String s, Bitmap bitmap, BitmapDisplayConfig bitmapDisplayConfig, BitmapLoadFrom bitmapLoadFrom) {
                             //设置圆角图片
-                            Bitmap roundCornerImage = BitmapHelper.getRoundCornerImage(bitmap, 10);
-                            iv_sub_img.setImageBitmap(roundCornerImage);
+                            Log.i("TAG", "加载图片");
+                            //Bitmap roundCornerImage = BitmapHelper.getRoundCornerImage(bitmap, 10);
+                            iv_sub_img.setImageBitmap(bitmap);
                         }
 
                         @Override
@@ -156,7 +162,6 @@ public class StrategyPager extends BaseContentPager implements View.OnClickListe
                         }
                     });
                     id_gallery.addView(columnView);
-                    //TODO
                     //攻略->栏目->每日值得Buy条目: http://api.liwushuo.com/v2/columns/46?limit=20&offset=0
                     //CATEGORY_ITEM_URL = "http://api.liwushuo.com/v2/columns/%d?limit=20&offset=0";
                     //给栏目项添加监听器跳转页面(WebView)
@@ -164,10 +169,10 @@ public class StrategyPager extends BaseContentPager implements View.OnClickListe
                     String CATEGORY_ITEM_URL_after = String.format(Constants.CATEGORY_ITEM_URL, columnItemID);
                     Intent intent = new Intent(columnView.getContext(), StrategyDetail.class);
                     intent.putExtra("url", CATEGORY_ITEM_URL_after);
-                    //跳转至WebView界面
-                    columnView.getContext().startActivity(intent);
-
                 }
+                //给LinearLayout添加监听器,跳转至WebView界面
+                //columnView.getContext().startActivity(intent);
+
             }
         } else {
             //解析种类数据
@@ -190,7 +195,7 @@ public class StrategyPager extends BaseContentPager implements View.OnClickListe
     private class CategoryListAdapter extends BaseAdapter {
         @Override
         public int getCount() {
-            return channel_groups.size();
+            return channel_groups != null ? channel_groups.size() : 0;
         }
 
         @Override

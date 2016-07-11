@@ -1,4 +1,4 @@
-package com.l000phone.mygifttalk.CategoryEntity;
+package com.l000phone.mygifttalk.categoryentity;
 
 import java.util.List;
 

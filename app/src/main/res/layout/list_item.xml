@@ -10,10 +10,10 @@
         android:id="@+id/tv_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="15dp"
+        android:padding="10dp"
         android:text="品类"
         android:textColor="#000"
-        android:textSize="18sp" />
+        android:textSize="15sp" />
 
     <com.l000phone.mygifttalk.view.CustomGridView
         android:id="@+id/gv_grid"

@@ -8,9 +8,10 @@
 
     <ImageView
         android:id="@+id/iv_img"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
+        android:scaleType="fitXY"
         android:src="@mipmap/ic_launcher" />
 
 </RelativeLayout>

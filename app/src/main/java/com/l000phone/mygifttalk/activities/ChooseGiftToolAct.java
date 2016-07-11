@@ -11,9 +11,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
-import com.l000phone.mygifttalk.CategoryEntity.ChangeGiftData;
-import com.l000phone.mygifttalk.Constants.Constants;
 import com.l000phone.mygifttalk.R;
+import com.l000phone.mygifttalk.categoryentity.ChangeGiftData;
+import com.l000phone.mygifttalk.constants.Constants;
 import com.l000phone.mygifttalk.adapter.ChooseGiftAdapter;
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.exception.HttpException;

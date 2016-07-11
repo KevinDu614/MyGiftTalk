@@ -5,8 +5,8 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 
 import com.google.gson.Gson;
-import com.l000phone.mygifttalk.CategoryEntity.ChannelGroupsData;
-import com.l000phone.mygifttalk.Constants.Constants;
+import com.l000phone.mygifttalk.categoryentity.ChannelGroupsData;
+import com.l000phone.mygifttalk.constants.Constants;
 import com.l000phone.mygifttalk.R;
 import com.l000phone.mygifttalk.base.BaseContentPager;
 import com.lidroid.xutils.HttpUtils;

@@ -14,7 +14,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:text="栏目"
-            android:textColor="@android:color/darker_gray"
+            android:textColor="#000000"
             android:textSize="15sp" />
 
         <TextView
@@ -27,7 +27,7 @@
             android:clickable="true"
             android:padding="15dp"
             android:text="查看全部"
-            android:textColor="@android:color/darker_gray"
+            android:textColor="#000000"
             android:textSize="15sp" />
 
         <ImageView
@@ -47,11 +47,11 @@
 
         <LinearLayout
             android:id="@+id/id_gallery"
-            android:layout_width="80dp"
+            android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_gravity="center_vertical"
-            android:background="#fff"
-            android:orientation="horizontal"></LinearLayout>
+            android:background="#FFFFFF"
+            android:orientation="horizontal" />
     </HorizontalScrollView>
 
 </LinearLayout>

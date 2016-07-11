@@ -9,7 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.l000phone.mygifttalk.CategoryEntity.ChannelGroupsData;
+import com.l000phone.mygifttalk.categoryentity.ChannelGroupsData;
 import com.l000phone.mygifttalk.R;
 import com.lidroid.xutils.BitmapUtils;
 import com.lidroid.xutils.bitmap.BitmapDisplayConfig;
@@ -72,7 +72,7 @@ public class CategoryGridAdapter extends BaseAdapter {
 
         ChannelGroupsData.DataBean.ChannelGroupsBean.ChannelsBean channelsBean = mChannels.get(i);
 
-        String icon_url = channelsBean.getIcon_url();
+        String icon_url = channelsBean.getCover_image_url();
         loadImage(holder.imageView, icon_url);
         return view;
     }

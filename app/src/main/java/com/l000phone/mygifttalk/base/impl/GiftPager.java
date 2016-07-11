@@ -14,8 +14,8 @@ import android.widget.Toast;
 
 
 import com.google.gson.Gson;
-import com.l000phone.mygifttalk.CategoryEntity.SingleCategoriesData;
-import com.l000phone.mygifttalk.Constants.Constants;
+import com.l000phone.mygifttalk.categoryentity.SingleCategoriesData;
+import com.l000phone.mygifttalk.constants.Constants;
 import com.l000phone.mygifttalk.R;
 import com.l000phone.mygifttalk.activities.ChooseGiftToolAct;
 import com.l000phone.mygifttalk.adapter.MenuAdapter;

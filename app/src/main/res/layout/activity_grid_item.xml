@@ -37,7 +37,7 @@
 
     </RelativeLayout>
 
-    <com.l000phone.gifttalk.view.RefreshListView
+    <com.l000phone.mygifttalk.view.RefreshListView
         android:id="@+id/lv_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

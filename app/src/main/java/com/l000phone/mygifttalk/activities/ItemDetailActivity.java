@@ -14,7 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
-import com.l000phone.mygifttalk.CategoryEntity.ChannelsItem;
+import com.l000phone.mygifttalk.categoryentity.ChannelsItem;
 import com.l000phone.mygifttalk.R;
 import com.l000phone.mygifttalk.adapter.CategoryDetailAdapter;
 import com.l000phone.mygifttalk.view.RefreshListView;
@@ -109,7 +109,7 @@ public class ItemDetailActivity extends Activity implements View.OnClickListener
             public void onSuccess(ResponseInfo<String> responseInfo) {
 
                 String result = responseInfo.result;
-                Log.e("======", result);
+                Log.i("TAG", result);
                 ParseJsonToBean(result, true);
                 mListView.onRefreshComplete(true);
             }

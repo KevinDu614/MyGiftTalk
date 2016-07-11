@@ -13,6 +13,7 @@
         android:horizontalSpacing="8dp"
         android:numColumns="2"
         android:padding="8dp"
+        android:scrollbars="none"
         android:stretchMode="columnWidth"
         android:verticalSpacing="8dp"></GridView>
 </LinearLayout>

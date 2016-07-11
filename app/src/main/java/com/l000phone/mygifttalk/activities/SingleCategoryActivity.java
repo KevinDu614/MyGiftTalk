@@ -10,8 +10,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
-import com.l000phone.mygifttalk.CategoryEntity.SingleItemData;
-import com.l000phone.mygifttalk.Constants.Constants;
+import com.l000phone.mygifttalk.categoryentity.SingleItemData;
+import com.l000phone.mygifttalk.constants.Constants;
 import com.l000phone.mygifttalk.R;
 import com.l000phone.mygifttalk.adapter.SingleCategoryAdapter;
 import com.lidroid.xutils.HttpUtils;

@@ -1,4 +1,4 @@
-package com.l000phone.mygifttalk.Constants;
+package com.l000phone.mygifttalk.constants;
 
 import android.content.Context;
 import android.content.SharedPreferences;
