@@ -50,7 +50,7 @@ public class ItemDetailActivity extends Activity implements View.OnClickListener
         mListView = (RefreshListView) findViewById(R.id.lv_list);
 
         imgUrl = getIntent().getStringExtra("imgUrl");
-        Log.e("======", imgUrl);
+        Log.i("TAG", imgUrl);
 
         name = getIntent().getStringExtra("name");
         tvTitle.setText(this.name);
@@ -87,7 +87,7 @@ public class ItemDetailActivity extends Activity implements View.OnClickListener
             public void onSuccess(ResponseInfo<String> responseInfo) {
 
                 String result = responseInfo.result;
-                Log.e("======", result);
+                Log.i("TAG", result);
                 ParseJsonToBean(result, false);
                 mListView.onRefreshComplete(true);
             }
@@ -125,9 +125,11 @@ public class ItemDetailActivity extends Activity implements View.OnClickListener
 
     private List<ChannelsItem.DataBean.ItemsBean> itemsEntityList;
 
+    //解析数据
     private void ParseJsonToBean(String result, boolean isMore) {
 
         Gson gson = new Gson();
+
         ChannelsItem itemBean = gson.fromJson(result, ChannelsItem.class);
 
         String more = itemBean.getData().getPaging().getNext_url();
@@ -141,6 +143,7 @@ public class ItemDetailActivity extends Activity implements View.OnClickListener
             itemsEntityList = itemBean.getData().getItems();
             if (itemsEntityList != null) {
                 Log.i("TAG", itemsEntityList.toString());
+                //条目添加adapter()
                 detailAdapter = new CategoryDetailAdapter(ItemDetailActivity.this);
                 detailAdapter.setData(itemsEntityList);
                 mListView.setAdapter(detailAdapter);
@@ -160,7 +163,7 @@ public class ItemDetailActivity extends Activity implements View.OnClickListener
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+        //点击跳转至WebView界面
         ChannelsItem.DataBean.ItemsBean itemsEntity = itemsEntityList.get(position);
         String webUrl = itemsEntity.getUrl();
         Intent intent = new Intent(ItemDetailActivity.this, StrategyDetail.class);

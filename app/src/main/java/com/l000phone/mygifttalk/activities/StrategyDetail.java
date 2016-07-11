@@ -3,6 +3,7 @@ package com.l000phone.mygifttalk.activities;
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -63,7 +64,7 @@ public class StrategyDetail extends Activity {
             @Override
             public void onPageStarted(WebView view, String url, Bitmap favicon) {
                 super.onPageStarted(view, url, favicon);
-                System.out.println("网页开始加载");
+                Log.i("TAG","----->网页开始加载");
                 progressBar.setVisibility(View.VISIBLE);
             }
 
@@ -73,7 +74,7 @@ public class StrategyDetail extends Activity {
             @Override
             public void onPageFinished(WebView view, String url) {
                 super.onPageFinished(view, url);
-                System.out.println("网页开始结束");
+                Log.i("TAG","----->网页开始结束");
 
                 progressBar.setVisibility(View.GONE);
             }
@@ -84,7 +85,7 @@ public class StrategyDetail extends Activity {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
                 // tel:110
-                System.out.println("跳转url:" + url);
+                Log.i("TAG","----->跳转url:" + url);
                 view.loadUrl(url);
 
                 return true;

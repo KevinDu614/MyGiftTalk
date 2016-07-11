@@ -25,6 +25,12 @@
         </activity>
         <activity android:name=".activities.GuideActivity" />
         <activity android:name=".activities.CrowdActivity" />
+        <activity android:name=".activities.ItemDetailActivity" />
+        <activity android:name=".activities.StrategyDetail" />
+        <activity android:name=".activities.ChooseGiftToolAct" />
+        <activity android:name=".activities.SingleCategoryActivity" />
+
+
     </application>
 
 </manifest>
