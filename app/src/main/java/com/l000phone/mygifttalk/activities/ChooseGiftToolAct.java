@@ -12,7 +12,6 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.l000phone.mygifttalk.R;
-import com.l000phone.mygifttalk.categoryentity.ChangeGiftData;
 import com.l000phone.mygifttalk.constants.Constants;
 import com.l000phone.mygifttalk.adapter.ChooseGiftAdapter;
 import com.lidroid.xutils.HttpUtils;

@@ -34,7 +34,7 @@ public class CategoryPager extends BasePager {
         //添加攻略和单品页面
         mPagerList = new ArrayList<>();
         mPagerList.add(new StrategyPager(mActivity));
-        mPagerList.add(new GiftPager(mActivity));
+        //mPagerList.add(new GiftPager(mActivity));
         categoryViewPager.setAdapter(new CategoryContentPagerAdapter());
         //给RadioGroup设置选择监听器
         rgGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {

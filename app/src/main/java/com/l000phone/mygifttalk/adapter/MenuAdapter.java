@@ -6,7 +6,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.l000phone.mygifttalk.categoryentity.SingleCategoriesData;
 import com.l000phone.mygifttalk.R;
 
 import java.util.ArrayList;

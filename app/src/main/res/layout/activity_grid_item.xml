@@ -16,7 +16,7 @@
             android:layout_height="20dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="15dp"
-            android:background="@drawable/category_tab_left_shape" />
+            android:background="@mipmap/ic_action_back" />
 
         <TextView
             android:id="@+id/tv_title"

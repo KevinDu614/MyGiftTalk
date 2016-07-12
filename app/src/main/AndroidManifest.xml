@@ -28,7 +28,6 @@
         <activity android:name=".activities.ItemDetailActivity" />
         <activity android:name=".activities.StrategyDetail" />
         <activity android:name=".activities.ChooseGiftToolAct" />
-        <activity android:name=".activities.SingleCategoryActivity" />
 
 
     </application>
